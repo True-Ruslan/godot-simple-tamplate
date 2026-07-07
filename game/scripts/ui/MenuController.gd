@@ -35,6 +35,7 @@ func _ready() -> void:
 
 func show_main_menu() -> void:
     is_main_menu_active = true
+    GameState.set_start_menu_active(true)
     get_tree().paused = true
     Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
     _show_only(main_menu)
@@ -59,6 +60,7 @@ func _show_only(menu: Control) -> void:
 
 func _on_start_pressed() -> void:
     is_main_menu_active = false
+    GameState.set_start_menu_active(false)
     hide_all_menus()
     start_requested.emit()
     GameState.set_pause(false)
