@@ -1,10 +1,14 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=4 format=3]
 
 [ext_resource type="Script" path="res://game/scripts/examples/AudioShowcaseController.gd" id="1_controller"]
 [ext_resource type="Script" path="res://game/scripts/audio/AudioManager.gd" id="2_audio"]
+[ext_resource type="Script" path="res://game/scripts/examples/ShowcaseReturnHandler.gd" id="3_return"]
 
 [node name="AudioShowcase" type="Node"]
 script = ExtResource("1_controller")
+
+[node name="ReturnHandler" type="Node" parent="."]
+script = ExtResource("3_return")
 
 [node name="AudioManager" type="Node" parent="."]
 script = ExtResource("2_audio")
@@ -49,7 +53,7 @@ horizontal_alignment = 1
 
 [node name="StatusLabel" type="Label" parent="CanvasLayer/Root/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Press a button to play generated placeholder audio."
+text = "Press a button to play generated placeholder audio. Esc returns to hub."
 horizontal_alignment = 1
 
 [node name="SoundAButton" type="Button" parent="CanvasLayer/Root/Panel/MarginContainer/VBoxContainer"]
