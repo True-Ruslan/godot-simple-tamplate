@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene load_steps=3 format=3]
 
 [ext_resource type="Script" path="res://game/scripts/postfx/PostFxController.gd" id="1_postfx"]
+[ext_resource type="PackedScene" path="res://game/scenes/examples/ExampleReturnButton.tscn" id="2_return"]
 
 [node name="PostFxShowcase" type="Node"]
 
@@ -12,10 +13,10 @@ color = Color(0.06, 0.055, 0.05, 1)
 
 [node name="Info" type="Label" parent="."]
 offset_left = 40.0
-offset_top = 40.0
+offset_top = 84.0
 offset_right = 1000.0
-offset_bottom = 100.0
-text = "PostFX Showcase: tint, grain placeholder and vignette overlay."
+offset_bottom = 144.0
+text = "PostFX showcase."
 
 [node name="PostFxController" type="CanvasLayer" parent="."]
 script = ExtResource("1_postfx")
@@ -40,3 +41,5 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 color = Color(0, 0, 0, 0.18)
+
+[node name="ExampleReturnButton" parent="." instance=ExtResource("2_return")]
