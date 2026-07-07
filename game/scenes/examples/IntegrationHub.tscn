@@ -1,0 +1,69 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://game/scripts/examples/IntegrationHubController.gd" id="1_hub"]
+
+[node name="IntegrationHub" type="Node"]
+script = ExtResource("1_hub")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Root" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Root"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -220.0
+offset_right = 300.0
+offset_bottom = 220.0
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Root/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = 32.0
+offset_right = -32.0
+offset_bottom = -32.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Root/Panel/MarginContainer"]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="CanvasLayer/Root/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Integration Showcase"
+horizontal_alignment = 1
+
+[node name="HintLabel" type="Label" parent="CanvasLayer/Root/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Выбери пример интеграции. Esc в showcase-сцене вернёт сюда."
+horizontal_alignment = 1
+
+[node name="AudioButton" type="Button" parent="CanvasLayer/Root/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Audio events"
+
+[node name="SpeechButton" type="Button" parent="CanvasLayer/Root/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Speech narration"
+
+[node name="DialogueButton" type="Button" parent="CanvasLayer/Root/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Dialogue runner"
+
+[node name="PostFxButton" type="Button" parent="CanvasLayer/Root/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "PostFX overlay"
+
+[node name="BackButton" type="Button" parent="CanvasLayer/Root/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Назад в главное меню"
