@@ -13,6 +13,10 @@ extends CharacterBody3D
 
 var look_x: float = 0.0
 
+func _ready() -> void:
+    mouse_sensitivity = GameState.mouse_sensitivity
+    GameState.mouse_sensitivity_changed.connect(_on_mouse_sensitivity_changed)
+
 func _input(event: InputEvent) -> void:
     if GameState.is_reading_message or get_tree().paused:
         return
@@ -50,3 +54,6 @@ func _physics_process(delta: float) -> void:
 func _update_crouch(delta: float) -> void:
     var target_y := crouching_height if Input.is_action_pressed("crouch") else standing_height
     camera_pivot.position.y = lerpf(camera_pivot.position.y, target_y, minf(1.0, delta * 12.0))
+
+func _on_mouse_sensitivity_changed(value: float) -> void:
+    mouse_sensitivity = value
