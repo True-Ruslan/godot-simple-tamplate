@@ -6,6 +6,7 @@ signal start_requested
 @onready var pause_menu: Control = $Root/PauseMenu
 @onready var settings_menu: Control = $Root/SettingsMenu
 @onready var start_button: Button = $Root/MainMenu/Panel/MarginContainer/VBoxContainer/StartButton
+@onready var examples_button: Button = get_node_or_null("Root/MainMenu/Panel/MarginContainer/VBoxContainer/ExamplesButton") as Button
 @onready var main_settings_button: Button = $Root/MainMenu/Panel/MarginContainer/VBoxContainer/SettingsButton
 @onready var resume_button: Button = $Root/PauseMenu/Panel/MarginContainer/VBoxContainer/ResumeButton
 @onready var pause_settings_button: Button = $Root/PauseMenu/Panel/MarginContainer/VBoxContainer/SettingsButton
@@ -20,6 +21,8 @@ func _ready() -> void:
     process_mode = Node.PROCESS_MODE_ALWAYS
 
     start_button.pressed.connect(_on_start_pressed)
+    if examples_button != null:
+        examples_button.pressed.connect(_on_examples_pressed)
     main_settings_button.pressed.connect(_on_main_settings_pressed)
     resume_button.pressed.connect(_on_resume_pressed)
     pause_settings_button.pressed.connect(_on_pause_settings_pressed)
@@ -64,6 +67,11 @@ func _on_start_pressed() -> void:
     hide_all_menus()
     start_requested.emit()
     GameState.set_pause(false)
+
+func _on_examples_pressed() -> void:
+    GameState.set_start_menu_active(false)
+    get_tree().paused = false
+    get_tree().change_scene_to_file("res://game/scenes/examples/ExampleIndex.tscn")
 
 func _on_resume_pressed() -> void:
     hide_all_menus()

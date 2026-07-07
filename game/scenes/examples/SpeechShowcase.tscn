@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=4 format=3]
 
 [ext_resource type="Script" path="res://game/scripts/examples/SpeechShowcaseController.gd" id="1_controller"]
 [ext_resource type="Script" path="res://game/scripts/audio/SpeechNarrator.gd" id="2_speech"]
+[ext_resource type="PackedScene" path="res://game/scenes/examples/ExampleReturnButton.tscn" id="3_return"]
 
 [node name="SpeechShowcase" type="Node"]
 script = ExtResource("1_controller")
@@ -59,3 +60,5 @@ text = "Speak example line"
 [node name="StopButton" type="Button" parent="CanvasLayer/Root/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Stop"
+
+[node name="ExampleReturnButton" parent="." instance=ExtResource("3_return")]
