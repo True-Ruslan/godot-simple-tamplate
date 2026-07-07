@@ -6,6 +6,7 @@ signal start_requested
 @onready var pause_menu: Control = $Root/PauseMenu
 @onready var settings_menu: Control = $Root/SettingsMenu
 @onready var start_button: Button = $Root/MainMenu/Panel/MarginContainer/VBoxContainer/StartButton
+@onready var integrations_button: Button = $Root/MainMenu/Panel/MarginContainer/VBoxContainer/IntegrationsButton
 @onready var main_settings_button: Button = $Root/MainMenu/Panel/MarginContainer/VBoxContainer/SettingsButton
 @onready var resume_button: Button = $Root/PauseMenu/Panel/MarginContainer/VBoxContainer/ResumeButton
 @onready var pause_settings_button: Button = $Root/PauseMenu/Panel/MarginContainer/VBoxContainer/SettingsButton
@@ -20,6 +21,7 @@ func _ready() -> void:
     process_mode = Node.PROCESS_MODE_ALWAYS
 
     start_button.pressed.connect(_on_start_pressed)
+    integrations_button.pressed.connect(_on_integrations_pressed)
     main_settings_button.pressed.connect(_on_main_settings_pressed)
     resume_button.pressed.connect(_on_resume_pressed)
     pause_settings_button.pressed.connect(_on_pause_settings_pressed)
@@ -64,6 +66,12 @@ func _on_start_pressed() -> void:
     hide_all_menus()
     start_requested.emit()
     GameState.set_pause(false)
+
+func _on_integrations_pressed() -> void:
+    GameState.set_start_menu_active(false)
+    get_tree().paused = false
+    Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+    get_tree().change_scene_to_file("res://game/scenes/examples/IntegrationHub.tscn")
 
 func _on_resume_pressed() -> void:
     hide_all_menus()
