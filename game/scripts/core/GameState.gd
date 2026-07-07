@@ -5,8 +5,10 @@ signal message_requested(title: String, body: String)
 signal message_closed
 signal flashlight_battery_changed(value: float)
 signal game_paused_changed(is_paused: bool)
+signal mouse_sensitivity_changed(value: float)
 
 var is_reading_message: bool = false
+var mouse_sensitivity: float = 0.0025
 
 func _ready() -> void:
     _ensure_default_input_map()
@@ -28,10 +30,16 @@ func set_flashlight_battery(value: float) -> void:
     flashlight_battery_changed.emit(clampf(value, 0.0, 100.0))
 
 func toggle_pause() -> void:
-    var next_state := not get_tree().paused
-    get_tree().paused = next_state
-    Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE if next_state else Input.MOUSE_MODE_CAPTURED)
-    game_paused_changed.emit(next_state)
+    set_pause(not get_tree().paused)
+
+func set_pause(is_paused: bool) -> void:
+    get_tree().paused = is_paused
+    Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE if is_paused else Input.MOUSE_MODE_CAPTURED)
+    game_paused_changed.emit(is_paused)
+
+func set_mouse_sensitivity(value: float) -> void:
+    mouse_sensitivity = clampf(value, 0.0005, 0.01)
+    mouse_sensitivity_changed.emit(mouse_sensitivity)
 
 func _ensure_default_input_map() -> void:
     _add_key_action("move_forward", KEY_W)
