@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=5 format=3]
 
 [ext_resource type="Script" path="res://game/scripts/examples/TextFlowShowcaseController.gd" id="1_controller"]
 [ext_resource type="Script" path="res://game/scripts/dialogue/DialogueRunner.gd" id="2_runner"]
 [ext_resource type="Script" path="res://game/scripts/dialogue/DialoguePanel.gd" id="3_panel"]
+[ext_resource type="PackedScene" path="res://game/scenes/examples/ExampleReturnButton.tscn" id="4_return"]
 
 [node name="DialogueShowcase" type="Node"]
 script = ExtResource("1_controller")
@@ -23,9 +24,9 @@ anchor_bottom = 1.0
 [node name="StartButton" type="Button" parent="DialoguePanel/Root"]
 layout_mode = 0
 offset_left = 24.0
-offset_top = 24.0
+offset_top = 84.0
 offset_right = 240.0
-offset_bottom = 64.0
+offset_bottom = 124.0
 text = "Start dialogue"
 
 [node name="Panel" type="Panel" parent="DialoguePanel/Root"]
@@ -61,3 +62,5 @@ fit_content = true
 [node name="NextButton" type="Button" parent="DialoguePanel/Root/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Next"
+
+[node name="ExampleReturnButton" parent="." instance=ExtResource("4_return")]
