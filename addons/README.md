@@ -1,12 +1,19 @@
-# addons
+# Addons
 
-Сюда можно добавлять сторонние Godot addons.
+This folder is reserved for optional Godot addons.
 
-Перед добавлением:
+## Rules
 
-1. Проверь лицензию.
-2. Добавь запись в `docs/CREDITS.md`.
-3. Добавь архитектурное решение в `docs/DECISIONS.md`.
-4. Проверь, что проект запускается после установки addon.
+Before committing an addon:
 
-В базовом шаблоне сторонние addons отсутствуют.
+1. Check its license.
+2. Record source and version in `docs/THIRD_PARTY_ASSETS.md`.
+3. Update `docs/CREDITS.md` when attribution is required.
+4. Keep only required addon files.
+5. Test that the project opens after enabling the addon.
+
+## Base template policy
+
+The base template should not require addons to run.
+
+Optional addons may be documented in `docs/integrations/OPTIONAL_ADDONS.md`.
