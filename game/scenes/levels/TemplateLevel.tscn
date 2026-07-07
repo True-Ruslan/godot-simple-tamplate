@@ -111,7 +111,11 @@ shape = SubResource("BoxShape_wall_short")
 [node name="Door_Exit" parent="." instance=ExtResource("2_door")]
 position = Vector3(0, 0, -7.83)
 locked_text = "Дверь не поддаётся. Сначала нужно понять, что здесь произошло."
-objective_after_open = "Выйти из помещения."
+required_event_id_to_unlock = "note_read_first_time"
+objective_after_locked_check = "Найти подсказку в классе."
+objective_after_open = "Демо завершено."
+completion_title_after_open = "Демо завершено"
+completion_body_after_open = "Ты нашёл записку, увидел первое событие и открыл дверь. Это минимальный пример короткого atmospheric horror loop. Теперь можно заменить класс, текст и события на свои."
 
 [node name="TeacherTable" type="StaticBody3D" parent="."]
 position = Vector3(0, 0.8, -3.8)
