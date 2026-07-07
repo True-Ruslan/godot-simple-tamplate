@@ -20,10 +20,20 @@ Use this template after opening the project in Godot.
 - [ ] Main scene starts.
 - [ ] Player spawns correctly.
 - [ ] Camera works.
+- [ ] Mouse look works.
 - [ ] Movement works.
 - [ ] Interaction works.
 - [ ] Flashlight works.
 - [ ] HUD works.
+
+## Demo flow result
+
+- [ ] Exit door can be checked before reading the note.
+- [ ] Door shows locked/state message before the event.
+- [ ] Note can be read.
+- [ ] Blackboard message appears after reading the note.
+- [ ] Exit door opens after the event.
+- [ ] Completion message appears after opening the door.
 
 ## Errors and warnings
 
