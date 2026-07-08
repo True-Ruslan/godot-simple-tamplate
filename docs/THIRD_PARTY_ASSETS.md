@@ -6,9 +6,33 @@ Use this file to record every external asset, addon, shader, sound, font, textur
 
 None.
 
-The current showcase uses built-in Godot nodes, scripts and generated placeholder behavior.
+The current template uses built-in Godot nodes, scripts and generated `.tres` materials. No external binary textures, models, audio files or addons are bundled yet.
 
-## Registry template
+## Generated in-repository materials
+
+These are project-owned placeholder materials generated as text resources:
+
+| Asset | Type | Source | Author | License | Used in | Commercial safe | Notes |
+|---|---|---|---|---|---|---|---|
+| `old_plaster_wall.tres` | material | in-repository generated resource | Template authors | MIT with project | classroom walls | yes | Uses Godot noise texture. |
+| `green_wall_panel.tres` | material | in-repository generated resource | Template authors | MIT with project | lower wall panels | yes | Uses Godot noise texture. |
+| `worn_linoleum_floor.tres` | material | in-repository generated resource | Template authors | MIT with project | classroom floor | yes | Uses Godot noise texture. |
+| `painted_wood_door.tres` | material | in-repository generated resource | Template authors | MIT with project | door and frame | yes | Uses Godot noise texture. |
+| `chalk_blackboard.tres` | material | in-repository generated resource | Template authors | MIT with project | blackboard | yes | Uses Godot noise texture. |
+| `school_wood.tres` | material | in-repository generated resource | Template authors | MIT with project | desks, chairs, cabinet | yes | Uses Godot noise texture. |
+| `gray_fixture.tres` | material | in-repository generated resource | Template authors | MIT with project | radiator and handles | yes | Simple material. |
+| `paper_notice.tres` | material | in-repository generated resource | Template authors | MIT with project | signs and notes | yes | Simple material. |
+
+## Recommended external sources for the next art pass
+
+| Source | Best for | License policy to verify before import |
+|---|---|---|
+| Poly Haven | PBR textures, HDRI, models | CC0 assets, attribution not required. |
+| Kenney | game-ready low-poly assets | CC0 game assets, attribution not required. |
+| ambientCG | PBR materials | CC0 materials; verify each download page before import. |
+| Quaternius | low-poly props and packs | Verify each pack license before import. |
+
+## Registry template for future external files
 
 | Asset | Type | Source | Author | License | Used in | Commercial safe | Notes |
 |---|---|---|---|---|---|---|---|
